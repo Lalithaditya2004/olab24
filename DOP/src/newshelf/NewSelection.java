@@ -1,6 +1,5 @@
 package newshelf;
 
-
 public class NewSelection {
 
 	// TODO: Complete this method 
@@ -12,16 +11,29 @@ public class NewSelection {
 	 */
 	public static String getAgeOrTitle(Object o) {
 		
-		if (o instanceof Book) {
-			
+		if (o instanceof Comic c) {
+			return ((Comic) o).getTitle();
 		}
+		if(o instanceof TextBook t){
+			return ((TextBook) o).getSubject();
+		}	
+		if(o instanceof Fiction f){
+			return ((Fiction) o).getName();
+		}
+
 		return null;
 	}
 
 	public static void main(String[] args) {
 		
 		// TODO: Write a test code here and execute and text.
-		TextBook t = new TextBook();
+		TextBook t = new TextBook("Social Studies");
+		Comic c = new Comic("Avengers Dooms Day",54);
+		Fiction f = new Fiction("Harry Potter",FictionType.GoK);
+		System.out.println(getAgeOrTitle(f));
+		System.out.println(getAgeOrTitle(c));
+		System.out.println(getAgeOrTitle(t));
+		
 		
 	}
 }
