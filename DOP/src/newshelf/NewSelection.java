@@ -12,13 +12,13 @@ public class NewSelection {
 	public static String getAgeOrTitle(Object o) {
 		
 		if (o instanceof Comic c) {
-			return ((Comic) o).getTitle();
+			return ((Comic) o).Title();
 		}
 		if(o instanceof TextBook t){
-			return ((TextBook) o).getSubject();
+			return ((TextBook) o).subject();
 		}	
 		if(o instanceof Fiction f){
-			return ((Fiction) o).getName();
+			return ((Fiction) o).name();
 		}
 
 		return null;
