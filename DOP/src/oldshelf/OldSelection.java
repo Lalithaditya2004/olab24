@@ -15,15 +15,11 @@ public class OldSelection {
 			// if(o instanceof Comic) return ((Comic)o).getTitle();
 			// else if(o instanceof Fiction) return ((Fiction)o).getName();
 			// else if(o instanceof TextBook) return ((TextBook)o).getSubject();
-			switch (o.getClass().getSimpleName()) {
-				case "Comic":
-					return ((Comic)o).getTitle();
-				case "Fiction":
-					return ((Fiction)o).getName();
-				case "TextBook":
-					return ((TextBook)o).getSubject();
-				default:
-					throw new AssertionError();
+			switch (o) {
+				case Comic c -> {return c.getTitle();}
+				case Fiction f -> {return f.getName();}
+				case TextBook t -> {return t.getSubject();}
+				default -> throw new AssertionError();
 			}
 		}
 		return null;
